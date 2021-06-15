@@ -1,6 +1,6 @@
-const modelTable = require('./tables/CookieTable');
+const cookieTable = require('./tables/CookieTable');
 
-modelTable.sync().then(() => {
+cookieTable.sync().then(() => {
     console.log('table created success')
 })
 .catch(console.log);

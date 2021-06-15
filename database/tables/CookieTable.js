@@ -6,7 +6,7 @@ const columns = {
         type: Sequelize.STRING,
         allowNull: false
     },
-    sabor : {
+    flavor : {
         type: Sequelize.ENUM('Chocolate', 'Goiabinha', 'Chocolate Com Avelã', 'Banana', 'Acebolado'),
         allowNull: false
     },
@@ -14,7 +14,7 @@ const columns = {
         type: Sequelize.FLOAT,
         allowNull: false
     },
-    data_validade : {
+    expiration_date: {
         type: Sequelize.DATE,
         allowNull: false
     },
