@@ -2,10 +2,10 @@ const Sequelize = require('Sequelize')
 
 const instance = new Sequelize(
     'petshop',
-    'root',
+    'admin',
     'admin',
     {
-        host: '192.168.0.106',
+        host: 'localhost',
         dialect: 'mysql'
     }
 );
