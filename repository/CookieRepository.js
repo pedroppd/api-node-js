@@ -1,6 +1,6 @@
 const cookieTable = require('../database/tables/CookieTable')
 
-class CookieRepository{
+module.exports = {
 
     findAll()
     {
@@ -8,4 +8,3 @@ class CookieRepository{
     }
 }
 
-module.exports = new CookieRepository;
