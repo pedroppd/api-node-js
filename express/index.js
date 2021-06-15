@@ -11,5 +11,5 @@ app.listen(3000, () => {
 })
 
 consign()
-   .include('result-screen')
+   .include('controller')
    .into(app)

@@ -1,4 +1,4 @@
-const modelTable = require('../database/tables/CookieTable');
+const modelTable = require('./tables/CookieTable');
 
 modelTable.sync().then(() => {
     console.log('table created success')
