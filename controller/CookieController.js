@@ -21,13 +21,17 @@ module.exports = app => {
        res.status(200).send(JSON.stringify(cookie))
     })
 
-    app.put('/:id', async (req, res) => {
-    
+    app.put('/api/cookie/:id', async (req, res) => {
         
+        const id = parseInt(req.params.id);
+        const body = req.body;
+        const cookie = await cookieService.update(parseInt(id), body);
+        res.status(200).send(JSON.stringify(cookie))
     })
 
-    app.delete('/:id', async (req, res) => {
-        
-        
+    app.delete('/api/cookie/:id', async (req, res) => {
+        const id = parseInt(req.params.id)
+        const cookie = await cookieService.delete(id);
+        res.status(200).send(JSON.stringify(cookie))
     })
 }

@@ -1,5 +1,5 @@
 const cookieTable = require('../database/tables/CookieTable');
-const { save } = require('../service/CookieService');
+const { save, update } = require('../service/CookieService');
 
 module.exports = {
 
@@ -16,7 +16,35 @@ module.exports = {
     },
     async save(obj)
     {
-        await cookieTable.create(obj);
+        return await cookieTable.create(obj);
+    },
+    async update(id, body)
+    {
+        return await cookieTable.update(
+            {
+                name: body.name,
+                flavor: body.flavor,
+                price: body.price,
+                expiration_date: body.expiration_date,
+                weight: body.weight,
+
+            },
+            {
+                where: {
+                    id: id
+                }
+            }
+        )
+    },
+    async delete(id)
+    {
+        return await cookieTable.destroy(
+            {
+                where: {
+                    id: id
+                }
+            }
+        )
     }
 }
 
