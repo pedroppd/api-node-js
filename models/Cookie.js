@@ -1,13 +1,12 @@
 class Cookie {
-    constructor({name, flavor, price, expiration_date, weight})
+    constructor(obj)
     {
-        this.name = name;
-        this.flavor = flavor;
-        this.price = price;
-        this.expiration_date = expiration_date;
-        this.weight = weight;
+        this.name = obj.name;
+        this.flavor = obj.flavor;
+        this.price = obj.price;
+        this.expiration_date = obj.expiration_date;
+        this.weight = obj.weight;
     }
-
 }
 
 module.exports = Cookie;

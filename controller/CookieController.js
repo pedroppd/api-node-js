@@ -1,4 +1,5 @@
 const cookieService = require('../service/CookieService')
+const CookieModel = require('../models/Cookie')
 
 module.exports = app => {
 
@@ -8,9 +9,9 @@ module.exports = app => {
     });
 
     app.post('/api/cookie', async (req, res) => {
-        const obj = req.body;
-        console.log(obj)
-        const cookie = await cookieService.save(obj);
+
+        const modelCookie = new CookieModel(req.body);
+        const cookie = await cookieService.save(modelCookie);
         res.status(201).send(JSON.stringify(cookie))
     })
 
