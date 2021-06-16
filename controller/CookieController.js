@@ -17,17 +17,27 @@ module.exports = app => {
 
     app.get('/api/cookie/:id', async (req, res) => 
     {
-       const id =  req.params.id;
-       const cookie = await cookieService.findById(parseInt(id));
-       res.status(200).send(JSON.stringify(cookie))
+        
+            const id =  req.params.id;
+            const cookie = await cookieService.findById(parseInt(id));
+            if(cookie) 
+            {
+                res.status(200).send(JSON.stringify(cookie))
+            }
+            else
+            {
+                res.status(400).send(JSON.stringify({
+                    mensagem: 'cookie not exist in database =('
+                }))
+            }    
     })
 
     app.put('/api/cookie/:id', async (req, res) => {
         
         const id = parseInt(req.params.id);
-        const body = req.body;
+        const body = new CookieModel(req.body);
         const cookie = await cookieService.update(parseInt(id), body);
-        res.status(200).send(JSON.stringify(cookie))
+        res.status(204).send();
     })
 
     app.delete('/api/cookie/:id', async (req, res) => {

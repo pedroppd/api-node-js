@@ -8,7 +8,7 @@ module.exports = {
         return await cookieTable.findAll();
     },
     async findById(id){
-        return await cookieTable.findOne({
+       return await cookieTable.findOne({
             where: {
                 id: id
             }
