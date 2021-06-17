@@ -21,14 +21,7 @@ module.exports = {
     async update(id, body)
     {
         return await cookieTable.update(
-            {
-                name: body.name,
-                flavor: body.flavor,
-                price: body.price,
-                expiration_date: body.expiration_date,
-                weight: body.weight,
-
-            },
+            body,
             {
                 where: {
                     id: id
